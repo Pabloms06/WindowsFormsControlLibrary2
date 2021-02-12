@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsControlLibrary2
@@ -19,21 +13,73 @@ namespace WindowsFormsControlLibrary2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (PropiedadDeCarlos != null && PropiedadDeCarlos != "")
+            List<string> colores = new List<string>();
+
+            colores.Add("red");
+            colores.Add("yellow");
+            colores.Add("green");
+            colores.Add("blue");
+            colores.Add("grey");
+
+            if (textBox1.Text.Equals(colores[0]))
             {
-                MessageBox.Show(PropiedadDeCarlos, "Bien!", MessageBoxButtons.OK);
+                Console.BackgroundColor = ConsoleColor.Red;
+                label3.Text = "Rojo";
+            }
+
+            if (textBox1.Text.Equals(colores[1]))
+            {
+                Console.BackgroundColor = ConsoleColor.Yellow;
+                label3.Text = "Amarillo";
+                
+            }
+
+            if (textBox1.Text.Equals(colores[2]))
+            {
+                Console.BackgroundColor = ConsoleColor.Green;
+                label3.Text = "Verde";
+                
+            }
+
+            if (textBox1.Text.Equals(colores[3]))
+            {
+                Console.BackgroundColor = ConsoleColor.Blue;
+                label3.Text = "Azul";
+            }
+            if (textBox1.Text.Equals(colores[4]))
+            {
+                Console.BackgroundColor = ConsoleColor.Gray;
+                label3.Text = "Gris";
 
             }
-            else
+           if (textBox1.Text.Equals(" "))
             {
-                MessageBox.Show("Click realizado", "Bien!", MessageBoxButtons.OK);
-
+                label3.Text = "Espacio en blanco";
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+
+        private void UserControl1_Load(object sender, EventArgs e)
         {
-            button1.Enabled = checkBox1.Checked;
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = textBox1.Focused;
+        }
+
+        public static ConsoleColor BackgroundColor { get; set; }
+
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
