@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace WindowsFormsControlLibrary2
 {
     public partial class UserControl1: UserControl
     {
+
+
         public UserControl1()
         {
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             List<string> colores = new List<string>();
 
             colores.Add("red");
@@ -21,35 +26,42 @@ namespace WindowsFormsControlLibrary2
             colores.Add("blue");
             colores.Add("grey");
 
-            if (textBox1.Text.Equals(colores[0]))
+
+            if (textBox1.Text.ToLower().Equals(colores[0]))
             {
-                Console.BackgroundColor = ConsoleColor.Red;
+
+                this.BackColor = System.Drawing.Color.Red;
                 label3.Text = "Rojo";
+                
             }
 
-            if (textBox1.Text.Equals(colores[1]))
+            if (textBox1.Text.ToLower().Equals(colores[1]))
             {
-                Console.BackgroundColor = ConsoleColor.Yellow;
+                this.BackColor = System.Drawing.Color.Yellow;
                 label3.Text = "Amarillo";
                 
+
             }
 
-            if (textBox1.Text.Equals(colores[2]))
+            if (textBox1.Text.ToLower().Equals(colores[2]))
             {
-                Console.BackgroundColor = ConsoleColor.Green;
+                this.BackColor = System.Drawing.Color.Green;
                 label3.Text = "Verde";
                 
+
             }
 
-            if (textBox1.Text.Equals(colores[3]))
+            if (textBox1.Text.ToLower().Equals(colores[3]))
             {
-                Console.BackgroundColor = ConsoleColor.Blue;
+                this.BackColor = System.Drawing.Color.Blue;
                 label3.Text = "Azul";
+                
             }
-            if (textBox1.Text.Equals(colores[4]))
+            if (textBox1.Text.ToLower().Equals(colores[4]))
             {
-                Console.BackgroundColor = ConsoleColor.Gray;
+                this.BackColor = System.Drawing.Color.Gray;
                 label3.Text = "Gris";
+                
 
             }
            if (textBox1.Text.Equals(" "))
@@ -58,7 +70,7 @@ namespace WindowsFormsControlLibrary2
             }
         }
 
-
+        //No he conseguido que me cambie el fondo de pantalla, no se porque ya que la sintaxis es la correcta.
         private void UserControl1_Load(object sender, EventArgs e)
         {
 
